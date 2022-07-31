@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      main {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 300px;
+        width: 300px;
+        margin: -150px;
+      }
+      .box {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(173 171 168);
+        color: white;
+        font-size: 29px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 300px;
+        border: 2px solid gray;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+      }
+
+      .content:hover .left {
+        /* transform: rotate(30deg); */
+        background-color: red;
+        animation: lspin 1s linear infinite;
+      }
+      .content:hover .right {
+        /* transform: rotate(-30deg); */
+        background-color: blue;
+        animation: rspin 1s linear infinite;
+      }
+      .content:hover .yup {
+        background-image: linear-gradient(to right top, red, blue);
+        animation: big 0.7s ease-in-out;
+      }
+
+      @keyframes lspin {
+        from {
+          transform: rotate(0deg) scale(1);
+        }
+        to {
+          transform: rotate(360deg) scale(1.1);
+        }
+      }
+
+      @keyframes rspin {
+        from {
+          transform: rotate(0deg) scale(1.2);
+        }
+        to {
+          transform: rotate(-360deg) scale(1);
+        }
+      }
+
+      @keyframes big {
+        0% {
+          font-size: 29px;
+        }
+        25% {
+          font-size: 60px;
+        }
+        50% {
+          font-size: 40px;
+        }
+        75% {
+          font-size: 50px;
+        }
+        100% {
+          font-size: 29px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="content">
+        <div class="box left"></div>
+        <div class="box right"></div>
+        <div class="box yup">chirag</div>
+      </div>
+    </main>
+  </body>
+</html>

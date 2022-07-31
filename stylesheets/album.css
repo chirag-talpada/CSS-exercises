@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-achivement img {
+    animation: animate 0.3s ease-in-out;
+}
+
+.container-achivement {
+    width: 100%;
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 5%;
+
+}
+
+
+
+@keyframes animate {
+    from {
+        transform: scale(0.7);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.container-photo {
+    position: relative;
+    column-count: 4;
+    /* column-fill: balance; */
+    padding: 20px;
+}
+
+.container-awards {
+    position: relative;
+    column-count: 5;
+    padding: 20px;
+    display: none;
+}
+
+.heading {
+    width: 50%;
+    padding-bottom: 40px;
+    padding-top: 15px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.heading h3 {
+    font-size: 3em;
+    font-weight: bolder;
+    border-bottom: 4px solid black;
+    text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black, 0px -1px 0px black;
+}
+
+.heading h3 span {
+    font-weight: normal;
+    text-shadow: none;
+}
+
+nav {
+    text-align: center;
+    margin: 0 5px;
+}
+
+nav .navbtn {
+    background: none;
+    font-size: 17px;
+    outline: none;
+    border: 2px solid black;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 5px 2px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+nav .navbtn.active {
+    color: white;
+    background-color: black;
+}
+
+nav .navbtn:hover {
+    color: white;
+    background-color: rgb(0, 0, 0);
+}
+
+.image {
+    display: inline-block;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    transition: 0.25s ease-in-out;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: animate 0.3s ease-in-out;
+}
+
+.achievement-images .image:hover img {
+    transform: scale(1.1);
+}
+
+.achievement-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 30px;
+}
+
+.achievement-images img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+
+}
+
+.achievement-images div {
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.achievement-images img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+h1 {
+    position: absolute;
+    padding: 5px;
+    margin: 5px;
+    font-size: 25px;
+    background: #5c5c5c;
+    color: white;
+    border-radius: 5px;
+    opacity: 0;
+    transition: 0.25s ease-in-out;
+    z-index: 1;
+}
+
+.image:hover h1 {
+    opacity: 0.7;
+}
+
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+    display: none;
+}
+
+.fullscreen .preview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+    animation: prr 0.3s ease-in-out;
+    padding: 0 5px;
+}
+
+.fullscreen-2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+    display: none;
+}
+
+.fullscreen-2 .preview-2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 60px auto 0px;
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+    animation: prr2 0.3s ease-in-out;
+    padding: 0 5px;
+}
+
+@keyframes prr {
+    0% {
+        transform: scale(0.6);
+    }
+
+    1% {
+        transform: scale(0.6) translate(-70%, -70%);
+    }
+
+    100% {
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+@keyframes prr2 {
+    0% {
+        transform: scale(0.6);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+.fullscreen .preview .preview-head {
+    position: relative;
+    font-weight: bolder;
+    padding: 10px 0 5px 10px;
+}
+
+.fullscreen .preview .preview-head span {
+    position: absolute;
+    right: 10px;
+    top: -8px;
+    font-size: 40px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.fullscreen .preview .preview-head span::selection {
+    background-color: transparent;
+}
+
+.fullscreen .preview .preview-head span:hover {
+    color: blue;
+}
+
+.fullscreen .preview img {
+    height: 80vh;
+    width: auto;
+}
+
+.fullscreen-2 .preview-2 .preview-head-2 {
+    position: relative;
+    font-weight: bolder;
+    padding: 10px 0 5px 10px;
+}
+
+.fullscreen-2 .preview-2 .preview-head-2 span {
+    position: absolute;
+    right: 10px;
+    top: -8px;
+    font-size: 40px;
+    font-weight: bolder;
+    cursor: pointer;
+    ;
+}
+
+.fullscreen-2 .preview-2 .preview-head-2 span::selection {
+    background-color: transparent;
+}
+
+.fullscreen-2 .preview-2 .preview-head-2 span:hover {
+    color: blue;
+}
+
+.fullscreen-2 .preview-2 {
+    width: 50vw;
+    height: auto;
+}
+
+.fullscreen-2 .preview-2 img {
+    width: 100%;
+}
+
+.note {
+    position: fixed;
+    bottom: 10px;
+    left: -285px;
+    padding: 10px;
+    background-color: lightgreen;
+    color: green;
+    font-weight: bold;
+    border-radius: 0px 5px 5px 0px;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.2);
+    animation: suggest 5s cubic-bezier(0.19, 1.53, 0.92, -0.39);
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 97.5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    z-index: 1;
+    color: white;
+    font-size: 95%;
+}
+
+.banner h3 {
+    margin: 10% auto 5%;
+    border-bottom: 2px solid white;
+    width: 50%;
+}
+
+.banner p {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.banner span {
+    display: inline-block;
+    padding: 5px 15px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bolder;
+}
+
+.banner span:hover {
+    color: black;
+    background-color: white;
+}
+
+.image:hover .banner {
+    left: 0;
+}
+
+@keyframes suggest {
+    0% {
+        left: -285px;
+    }
+
+    10% {
+        left: -5px;
+    }
+
+    90% {
+        left: -5px;
+    }
+
+    100% {
+        left: -285px;
+    }
+}
+
+
+@media only screen and (max-width:1024px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .achievement-images {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .fullscreen-2 .preview-2 {
+        width: 60vw;
+    }
+
+    .banner {
+        font-size: 65%;
+    }
+}
+
+@media only screen and (max-width:768px) {
+
+    .container-awards {
+        column-count: 3;
+    }
+
+
+    .container-photo {
+        column-count: 3;
+    }
+
+    .heading {
+        width: 80%;
+    }
+
+    .heading h3 {
+
+        font-size: 2em;
+        text-shadow: none;
+    }
+
+    .fullscreen-2 .preview-2 {
+        width: 70vw;
+    }
+
+    .banner {
+        font-size: 65%;
+    }
+
+    .banner p {
+        font-size: 90%;
+    }
+
+}
+
+@media only screen and (max-width:425px) {
+
+    .container-photo {
+        column-count: 2;
+    }
+
+    .container-awards {
+        column-count: 2;
+    }
+
+    h1 {
+        font-size: 12px;
+    }
+
+    .fullscreen-2 .preview-2 {
+        width: 80vw;
+    }
+
+    .banner {
+        font-size: 70%;
+    }
+
+}
+
+@media only screen and (max-width:375px) {
+
+    .container-photo {
+        column-count: 1;
+    }
+
+    .container-awards {
+        column-count: 1;
+    }
+
+    .container-achivement {
+        column-count: 1;
+    }
+
+    h1 {
+        font-size: 15px;
+    }
+
+    .fullscreen .preview {
+        width: 70vw;
+        height: auto;
+    }
+
+    .fullscreen .preview img {
+        height: auto;
+        width: 100%;
+    }
+
+    .achievement-images {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .fullscreen-2 .preview-2 {
+        width: 90vw;
+    }
+
+    .banner {
+        font-size: 100%;
+    }
+}

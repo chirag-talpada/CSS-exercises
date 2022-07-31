@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            min-height: 100vh;
+            background-color: rgba(39,47,84,1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box1{  
+            height: 20px;
+            width: 20px;
+            background-color: white;
+            animation: b1 1s infinite cubic-bezier(0.71,-0.38, 0, 1.32);
+        }
+
+        @keyframes b1 {
+            0%{
+                transform: rotate(0deg);
+            }
+            /* 50% {
+                transform: rotate(45deg);
+            } */
+            100% {
+                transform: rotate(180deg);
+            }
+        }
+
+        table{
+            transform: rotate(45deg);
+            animation: rotatetab 1s infinite ease-out;
+            
+        }
+
+        @keyframes rotatetab {
+            0% {
+                transform: rotate(45deg);
+                border-spacing: 0px;
+            }
+            50% {
+                border-spacing: 40px;
+            }
+            100% {
+                transform: rotate(-45deg);
+                border-spacing: 0px;
+            }
+        }
+        .box2{
+            height: 20px;
+            width: 20px;
+            background-color: white;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <table>
+            <tr>
+                <td><div class="box1"></div></td>
+                <td><div class="box1"></div></td>
+            </tr>
+            <tr>
+                <td><div class="box1"></div></td>
+                <td><div class="box1"></div></td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>
