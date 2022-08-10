@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background: #010615;
+        }
+        .card{
+            width: 350px;
+            background: #060c21;
+            position: relative;
+            color: white;
+        }
+        .card::before{
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: #fff;
+            z-index: -1;
+        }
+        .card::after{
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: #fff;
+            z-index: -1;
+            filter: blur(40px);
+        }
+
+        .card::before,
+        .card::after{
+            background: linear-gradient(235deg,#772aff,#010615,#2196f3);
+        }
+
+        /* .card::before, .card::after {
+            background: linear-gradient(235deg,#772aff,#00ff95,#2196f3);
+        } */
+
+        .card:hover:after{
+            background: linear-gradient(235deg,#772aff,#00ff95,#2196f3);
+        }
+
+        .card .glass{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            display: block;
+            background-color: rgba(255, 255, 255, .1);
+            pointer-events: none;
+        }
+        .card-img{
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .card-img img{
+            width: 100%;
+            object-fit: cover;
+        }
+        .card-header{
+            font-size: 11px;
+        }
+        .card-headline{
+            font-weight: bold;
+            font-size: 18px;
+            padding: 0px 15px 7px 15px;
+            color: powderblue;
+        }
+        .card-description{
+            font-size: 11px;
+            padding: 0px 15px;
+            color: slategray;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+        
+        .card-line{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="glass"></div>
+        <div class="card-img">
+            <img src="../img/1n.jpg" />
+        </div>
+        <div class="card-line card-header">
+            <div class="card-date">Fri Jul 31 2020</div>
+            <div class="card-source">CNN</div>
+        </div>
+        <div class="card-headline">
+            How the extraordinary FBI search of Mar-a-Lago was covered across the media landscape
+        </div>
+        <div class="card-description">
+            The FBI search of Donald Trump's Florida resort is an extraordinary, 
+            historic development given that it targeted a former President of the United States and 
+            set off a political uproar he could use to stoke his likely 2024 White House bid.
+        </div>
+        <div class="card-line card-footer">
+            <div class="card-link">LEARN MORE</div>
+            <div class="card-number">1</div>
+        </div>
+    </div>
+</body>
+</html>
